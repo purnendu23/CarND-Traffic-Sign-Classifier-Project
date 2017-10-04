@@ -70,6 +70,7 @@ I then use `train_test_split` to split this set into training and validation. Th
 3. **Normalization of data**
 
 Finally, datasets are normalized. Example code: `X_train_normalized = (X_train-128)/128`
+
 ---
 
 ### Design and Test a Model Architecture
