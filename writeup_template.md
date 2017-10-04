@@ -56,6 +56,7 @@ You can see from the barplots that the distribution of examples across the 43 si
 ### Pre-process the Data Set
 I pre-process the data with the following steps:
 1. Conversion to gray-scale
+
 ... This was done by just taking the average of RGB values.
 ... `X_train = np.sum(X_train/3, axis=3, keepdims=True)`
 
