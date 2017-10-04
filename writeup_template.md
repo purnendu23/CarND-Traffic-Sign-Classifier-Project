@@ -29,9 +29,11 @@ The goals / steps of this project are the following:
 
 You're reading it! and here is a link to my [project code](https://github.com/purnendu23/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
+---
+
 ### Data Set Summary & Exploration
 
-#### 1. Basic summary of the data set. I used the simple python function `len()` to get all this information. Here is an example: `n_train = len(X_train)`. The rest are similar.
+###### 1. Basic summary of the data set. I used the simple python function `len()` to get all this information. Here is an example: `n_train = len(X_train)`. The rest are similar.
 
 * The size of training set is ? **34799**
 * The size of the validation set is ? **4410**
