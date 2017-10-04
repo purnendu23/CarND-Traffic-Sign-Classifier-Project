@@ -56,8 +56,9 @@ You can see from the barplots that the distribution of examples across the 43 si
 ### Pre-process the Data Set
 I pre-process the data with the following steps:
 1. Conversion to gray-scale
-  This was done by just taking the average of RGB values. Here is a sample code: 
-  `X_train = np.sum(X_train/3, axis=3, keepdims=True)`
+
+... This was done by just taking the average of RGB values. Here is a sample code: 
+... `X_train = np.sum(X_train/3, axis=3, keepdims=True)`
 
 2. Augmentation of artifitial data to get a more uniform distribution of examples in training and validation set
 3. Normalization of data.
