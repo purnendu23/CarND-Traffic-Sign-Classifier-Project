@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
+[image1]: ./images/Test_dataset_signcounts.png "Test Dataset barplot"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
@@ -44,7 +44,7 @@ I used the simple python function `len()` to get all this information. Here is a
 
 ###### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+I define a function `show_distribution()` which is used here and later in the project as well to visualize the dataset at hand. 
 
 ![alt text][image1]
 
