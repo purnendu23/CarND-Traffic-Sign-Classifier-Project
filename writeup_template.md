@@ -55,13 +55,22 @@ You can see from the barplots that the distribution of examples across the 43 si
 
 ### Pre-process the Data Set
 I pre-process the data with the following steps:
-1. Conversion to gray-scale
+1. **Conversion to gray-scale**
 
-... This was done by just taking the average of RGB values. Here is a sample code: 
-... `X_train = np.sum(X_train/3, axis=3, keepdims=True)`
+This was done by just taking the average of RGB values. Here is a sample code: 
+`X_train = np.sum(X_train/3, axis=3, keepdims=True)`
 
-2. Augmentation of artifitial data to get a more uniform distribution of examples in training and validation set
-3. Normalization of data.
+2. **Augmentation of artifitial data to get a more uniform distribution of examples in training and validation set**
+
+The first step in augmenting the dataset was combining the training and validation set. My goal was to get the count of examples associated with each class to approximately _"most number number of examples across all classes + 1000 "_. You can see this in the code: `max_count = max(count) + 1000`.
+I use three techniques for geometric transformations of images : 'tanslation', 'rotation' and 'perspective-transformation' (gives a top-view transformation of the image). In the project you will find `translation_image(img, translation_lbound, translation_hbound)`, `rotation_image(img, rotation_lbound, rotation_hbound )`, and `perspectiveTransformation_image(img)` which are called for each image. The resuting images are added to the final list along with the original images to get an augmented list of images.
+I then use `train_test_split` to split this set into training and validation. The following barplots show the distribution of examples in the 43 different classes of signs.
+
+![Training Augmented][image4] 
+![Validation Augmented][image5]
+
+
+3. **Normalization of data**
 ---
 
 ### Design and Test a Model Architecture
