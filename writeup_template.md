@@ -47,11 +47,10 @@ I used the simple python function `len()` to get all this information. Here is a
 
 I define a function `show_distribution()` which is used here and later in the project as well to visualize the dataset at hand. 
 
-![image1]
-![image2]
-![image3]
+![image1] ![image2] ![image3]
 
 You can see from the barplots that the distribution of examples across the 43 sign-classes is skewed. I fix this next by augmenting more data.
+
 ---
 
 ### Design and Test a Model Architecture
