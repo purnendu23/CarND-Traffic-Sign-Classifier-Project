@@ -51,6 +51,7 @@ I define a function `show_distribution()` which is used here and later in the pr
 ![image2]
 ![image3]
 
+You can see from the barplots that the distribution of examples across the 43 sign-classes is skewed. I fix this next by augmenting more data.
 ---
 
 ### Design and Test a Model Architecture
