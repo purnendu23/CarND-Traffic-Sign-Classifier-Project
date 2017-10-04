@@ -75,28 +75,29 @@ Finally, datasets are normalized. Example code: `X_train_normalized = (X_train-1
 
 ### Design and Test a Model Architecture
 
-####1. I start by using the LeNet architecture as described in the _Lesson# 8: Convolutional Neural Network_. This model  
+1. I start by using the LeNet architecture as described in the _Lesson# 8: Convolutional Neural Network_. This model could not give the minimum accuracy level of .93 for the validation dataset. However, instead of changing the model I focused on using other data-preprocesing techniques (especially data augmentation) as recommended in the project description. I am able to get 97% accuracy on the validation set with the simplest LeNet model. I am quite certain that I can improve this metrics by evolving this model which will be my next step. For now however, I report my approach and results with basic LeNet model.
 
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
-My final model consisted of the following layers:
+2. My model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 Gray image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution     	| Input = 32x32x1 Output = 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Pooling  | Input = 28x28x6 Output = 14x14x6 |
+| Convolution	    | Output = 10x10x16      									|
+| RELU		|         									|
+| Pooling				| Input = 10x10x16 Output = 5x5x16 |
+|	Flatten    | Input = 5x5x16 Output = 400 |					
+|	Fully Connected | Input = 400 Output = 120	|
+| RELU |  |
+| Fully Connected | Input = 120 Output = 84|
+| RELU | |
+| Fully Connected | Input = 84 Output = 43|
  
+There are only two changes made to the LeNet architecture. First, the input format og the images is changed from (32, 32, 3) to (32, 32, 1) and the final fully connected layer has 43 output values instead of one (because we have 43 different classes)
 
-
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an ....
 
