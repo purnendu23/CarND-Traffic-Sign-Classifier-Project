@@ -15,15 +15,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./images/Training_dataset_signcounts.png "Training Dataset barplot"
-[image2]: ./images/Validation_dataset_signcounts.png "Validation Dataset barplot"
-[image3]: ./images/Test_dataset_signcounts.png "Test Dataset barplot"
+[image1]: ./images/Training_distribution.png "Training Dataset barplot"
+[image2]: ./images/Validation_distribution.png "Validation Dataset barplot"
+[image3]: ./images/Test_distribution.png "Test Dataset barplot"
 
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./images/Training_augmented_distribution.png "Augmented training dataset barplot"
+[image5]: ./images/Validation_augmented_distribution.png "Augmented validation dataset barplot"
 
 ---
 ### Writeup
