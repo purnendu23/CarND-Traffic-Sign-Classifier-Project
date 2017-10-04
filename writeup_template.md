@@ -15,9 +15,10 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./images/Test_dataset_signcounts.png "Test Dataset barplot"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image1]: ./images/Training_dataset_signcounts.png "Training Dataset barplot"
+[image2]: ./images/Validation_dataset_signcounts.png "Validation Dataset barplot"
+[image3]: ./images/Test_dataset_signcounts.png "Test Dataset barplot"
+
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -46,7 +47,9 @@ I used the simple python function `len()` to get all this information. Here is a
 
 I define a function `show_distribution()` which is used here and later in the project as well to visualize the dataset at hand. 
 
-![alt text][image1]
+![image1]
+![image2]
+![image3]
 
 ---
 
