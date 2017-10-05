@@ -135,8 +135,8 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Right-of-way at the next intersection| Right-of-way at the next intersection   									| 
-| Speed limit (30 km/h| Speed limit (30 km/h|
-| Speed limit (60 km/h| Speed limit (60 km/h|
+| Speed limit (30 km/h)| Speed limit (30 km/h|
+| Speed limit (60 km/h)| Speed limit (60 km/h|
 | General caution| General caution|
 | Road work| Children crossing|
 
@@ -145,16 +145,16 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 ##### 3. Model Certainty - Softmax Probabilities
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model (reports the validation accuracy) is located in the 11th cell of the Ipython notebook.
+For all images the certainity of the model is almost 100%. That means it is very certain even if it is the wrong prediction.
+For example in case of sign - Road Work it is 99.9993% certain that the sign is _Children crossing_ and only 0.0007% certain that it is a road work sign.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
+| Percentage        	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 100        			| General caution | 
+| 99.9765 | Speed limit (60km/h)	|
+| 99.8264 | Speed limit (30km/h)|
+| 0.0007 | Road work|
+| 99.0 | Right-of-way at the next intersection|
 
 
