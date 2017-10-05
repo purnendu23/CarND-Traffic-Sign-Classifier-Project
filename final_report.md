@@ -144,7 +144,7 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model (reports the validation accuracy) is located in the 11th cell of the Ipython notebook.
 For all images the certainity of the model is almost 100%. That means it is very certain even if it is the wrong prediction.
-For example in case of sign - Road Work it is 99.9993% certain that the sign is _Children crossing_ and only 0.0007% certain that it is a road work sign.
+For example in case of sign - _Road work_, it is 99.9993% certain that the sign is _Children crossing_ but only 0.0007% certain that it is a road work sign.
 
 | Percentage        	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
