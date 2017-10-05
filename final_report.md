@@ -101,21 +101,23 @@ Finally, datasets are normalized. Example code: `X_train_normalized = (X_train-1
 There are only two changes made to the LeNet architecture. First, the input format of the images is changed from (32, 32, 3) to (32, 32, 1) and the final fully connected layer has 43 output values instead of one (because we have 43 different classes)
 
 ##### 3. Model Training
-3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 I used the basic LeNet architecture. However, I got the required accuracy by data preprocessing and turning the knobs on different hyperparameters. The _number of epochs_, _batch-size_ and _learning rate_ were the main ones.
-Fixing the learning rate to 0.00097 gave a gradually increasing accuracy on the validation set. I then experimented with the number of epochs and batch-size to finally fix those at 34 and 128. I used the AdamOptimizer to train the model. 
+Fixing the learning rate to 0.00097 gave a gradually increasing accuracy on the validation set. I then experimented with the number of epochs and batch-size to finally fix those at 35 and 156. I used mean of softmax cross entropy to calculate the loss and Adam Optimizer in the backpropogation step.
+```
+# Calculate Loss/Cost
+cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=one_hot_y, logits=logits)
+loss_operation = tf.reduce_mean(cross_entropy)
 
+#For running Backprop
+optimizer = tf.train.AdamOptimizer(learning_rate = rate)
+training_operation = optimizer.minimize(loss_operation)
+```
 ##### 4. Solution Approach
-Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+I used the LeNet architecture and achieved the desired level of accuracy by thoroughly exploring all the data-preprocessing techniques mentioned in the project description.
 
 My final model results were:
-* validation set accuracy of 
-* test set accuracy of ?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+* validation set accuracy of 96.9%
+* test set accuracy of ? 90.6%
  
 
 ### Test a Model on New Images
