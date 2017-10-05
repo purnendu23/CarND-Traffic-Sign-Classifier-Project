@@ -11,6 +11,12 @@
 [image4]: ./images/Training_augmented_distribution.png "Augmented training dataset barplot"
 [image5]: ./images/Validation_augmented_distribution.png "Augmented validation dataset barplot"
 
+[image6]: ./new_images/img1.png
+[image7]: ./new_images/img2.png
+[image8]: ./new_images/img3.png
+[image9]: ./new_images/img4.png
+[image10]: ./new_images/img5.png
+
 ---
 ### Submission Files/Writeup
 
@@ -114,15 +120,11 @@ My final model results were:
 ##### 1. Acquiring New Images
 Here are five German traffic signs that I found on the web:
 
-![Right-of-way at the next intersection][img1.png]
-
-![Speed limit (30 km/h)][img2.png]
-
-![Speed limit (60 km/h)][img3.png] 
-
-![General caution][img4.png] 
-
-![Road work][img5.png]
+![Right-of-way at the next intersection][image6]
+![Speed limit (30 km/h)][image7]
+![Speed limit (60 km/h)][image8] 
+![General caution][image9] 
+![Road work][image10]
 
 
 ##### 2. Performance on New Images
