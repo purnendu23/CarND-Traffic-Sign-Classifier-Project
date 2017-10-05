@@ -114,10 +114,14 @@ My final model results were:
 ##### 1. Acquiring New Images
 Here are five German traffic signs that I found on the web:
 
-![Right-of-way at the next intersection][img1.png] 
-![Speed limit (30 km/h][img2.png] 
-![Speed limit (60 km/h][img3.png] 
+![Right-of-way at the next intersection][img1.png]
+
+![Speed limit (30 km/h)][img2.png]
+
+![Speed limit (60 km/h)][img3.png] 
+
 ![General caution][img4.png] 
+
 ![Road work][img5.png]
 
 
