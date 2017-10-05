@@ -13189,7 +13189,7 @@ Model saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them here.</span>
@@ -14352,7 +14352,7 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web. </span>
@@ -14365,7 +14365,7 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">signNum</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t_labels</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actual Sign: &quot;</span> <span class="o">+</span> <span class="n">signNames</span><span class="p">[</span><span class="n">signNum</span><span class="p">])</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:s}</span><span class="s2">: </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">signNames</span><span class="p">[</span><span class="n">top5</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]],</span> <span class="n">top5</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:s}</span><span class="s2">: </span><span class="si">{:.4f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">signNames</span><span class="p">[</span><span class="n">top5</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]],</span> <span class="n">top5</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">sess</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -14384,43 +14384,43 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Actual Sign: General caution
-General caution: 100.0%
-Pedestrians: 0.0%
-Traffic signals: 0.0%
-Speed limit (20km/h): 0.0%
-Speed limit (30km/h): 0.0%
+General caution: 100.0000%
+Pedestrians: 0.0000%
+Traffic signals: 0.0000%
+Speed limit (20km/h): 0.0000%
+Speed limit (30km/h): 0.0000%
 
 
 Actual Sign: Speed limit (60km/h)
-Speed limit (60km/h): 100.0%
-Road work: 0.0%
-Speed limit (80km/h): 0.0%
-Speed limit (50km/h): 0.0%
-Roundabout mandatory: 0.0%
+Speed limit (60km/h): 99.9765%
+Road work: 0.0235%
+Speed limit (80km/h): 0.0000%
+Speed limit (50km/h): 0.0000%
+Roundabout mandatory: 0.0000%
 
 
 Actual Sign: Speed limit (30km/h)
-Speed limit (30km/h): 99.8%
-Speed limit (20km/h): 0.2%
-Speed limit (50km/h): 0.0%
-Roundabout mandatory: 0.0%
-Speed limit (80km/h): 0.0%
+Speed limit (30km/h): 99.8264%
+Speed limit (20km/h): 0.1736%
+Speed limit (50km/h): 0.0000%
+Roundabout mandatory: 0.0000%
+Speed limit (80km/h): 0.0000%
 
 
 Actual Sign: Road work
-Children crossing: 100.0%
-Road work: 0.0%
-Road narrows on the right: 0.0%
-Beware of ice/snow: 0.0%
-Dangerous curve to the right: 0.0%
+Children crossing: 99.9993%
+Road work: 0.0007%
+Road narrows on the right: 0.0000%
+Beware of ice/snow: 0.0000%
+Dangerous curve to the right: 0.0000%
 
 
 Actual Sign: Right-of-way at the next intersection
-Right-of-way at the next intersection: 100.0%
-Beware of ice/snow: 0.0%
-Children crossing: 0.0%
-Dangerous curve to the right: 0.0%
-Pedestrians: 0.0%
+Right-of-way at the next intersection: 99.9999%
+Beware of ice/snow: 0.0001%
+Children crossing: 0.0000%
+Dangerous curve to the right: 0.0000%
+Pedestrians: 0.0000%
 
 
 </pre>
