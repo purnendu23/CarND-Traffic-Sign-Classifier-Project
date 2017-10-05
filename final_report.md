@@ -23,9 +23,9 @@ The goals / steps of this project are the following:
 [image5]: ./images/Validation_augmented_distribution.png "Augmented validation dataset barplot"
 
 ---
-### Writeup
+### Submission Files/Writeup
 
-You're reading it! and here is a link to my [project code](https://github.com/purnendu23/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading the writeup! and here is a link to my [project code](https://github.com/purnendu23/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ---
 
@@ -40,7 +40,7 @@ I used the simple python function `len()` to get all this information. Here is a
 * The shape of a traffic sign image is ? **(32, 32, 3)**
 * The number of unique classes/labels in the data set is ? **43**
 
-###### 2. Include an exploratory visualization of the dataset.
+###### 2. Exploratory visualization
 
 I define a function `show_distribution()` which is used here and later in the project as well to visualize the dataset at hand. 
 
@@ -50,14 +50,17 @@ You can see from the barplots that the distribution of examples across the 43 si
 
 ---
 
-### Pre-process the Data Set
+### Design and Test a Model Architecture
+
+###### 1. Preprocessing
+
 I pre-process the data with the following steps:
-1. **Conversion to gray-scale**
+*  **Conversion to gray-scale**
 
 This was done by just taking the average of RGB values. Here is a sample code: 
 `X_train = np.sum(X_train/3, axis=3, keepdims=True)`
 
-2. **Augmentation of artifitial data to get a more uniform distribution of examples in training and validation set**
+*  **Augmentation of artifitial data to get a more uniform distribution of examples in training and validation set**
 
 The first step in augmenting the dataset was combining the training and validation set. My goal was to get the count of examples associated with each class to approximately _"most number number of examples across all classes + 1000 "_. You can see this in the code: `max_count = max(count) + 1000`.
 I use three techniques for geometric transformations of images : 'tanslation', 'rotation' and 'perspective-transformation' (gives a top-view transformation of the image). In the project you will find `translation_image(img, translation_lbound, translation_hbound)`, `rotation_image(img, rotation_lbound, rotation_hbound )`, and `perspectiveTransformation_image(img)` which are called for each image. The resuting images are added to the final list along with the original images to get an augmented list of images.
@@ -67,13 +70,13 @@ I then use `train_test_split` to split this set into training and validation. Th
 ![Validation Augmented][image5]
 
 
-3. **Normalization of data**
+*  **Normalization of data**
 
 Finally, datasets are normalized. Example code: `X_train_normalized = (X_train-128)/128`
 
 ---
 
-### Design and Test a Model Architecture
+###### 2. Model Architecture
 
 1. I start by using the LeNet architecture as described in the _Lesson# 8: Convolutional Neural Network_. This model could not give the minimum accuracy level of .93 for the validation dataset. However, instead of changing the model I focused on using other data-preprocesing techniques (especially data augmentation) as recommended in the project description. I am able to get 97% accuracy on the validation set with the simplest LeNet model. I am quite certain that I can improve this metrics by evolving this model which will be my next step. For now however, I report my approach and results with basic LeNet model.
 
@@ -97,23 +100,17 @@ Finally, datasets are normalized. Example code: `X_train_normalized = (X_train-1
  
 There are only two changes made to the LeNet architecture. First, the input format of the images is changed from (32, 32, 3) to (32, 32, 1) and the final fully connected layer has 43 output values instead of one (because we have 43 different classes)
 
+###### 3. Model Training
 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+I used the basic LeNet architecture. However, I got the required accuracy by data preprocessing and turning the knobs on different hyperparameters. The _number of epochs_, _batch-size_ and _learning rate_ were the main ones.
+Fixing the learning rate to 0.00097 gave a gradually increasing accuracy on the validation set. I then experimented with the number of epochs and batch-size to finally fix those at 34 and 128. I used the AdamOptimizer to train the model. 
 
-To train the model, I used an ....
-
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+###### 4. Solution Approach
+Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
+* validation set accuracy of 
 * test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 If a well known architecture was chosen:
 * What architecture was chosen?
@@ -121,9 +118,10 @@ If a well known architecture was chosen:
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+###### 1. Acquiring New Images
+Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
@@ -132,7 +130,8 @@ Here are five German traffic signs that I found on the web:
 
 The first image might be difficult to classify because ...
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+###### 2. Performance on New Images
+Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
@@ -147,7 +146,8 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+###### 3. Model Certainty - Softmax Probabilities
+Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
