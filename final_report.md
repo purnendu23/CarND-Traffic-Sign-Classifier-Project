@@ -1,7 +1,5 @@
 # **Traffic Sign Recognition**
 
----
-
 [//]: # (Image References)
 
 [image1]: ./images/Training_distribution.png "Training Dataset barplot"
@@ -17,7 +15,6 @@
 [image9]: ./new_images/img4.png
 [image10]: ./new_images/img5.png
 
----
 ### Submission Files/Writeup
 
 You're reading the writeup! and here is a link to my [project code](https://github.com/purnendu23/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
