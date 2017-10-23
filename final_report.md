@@ -70,7 +70,7 @@ Finally, datasets are normalized. Example code: `X_train_normalized = (X_train-1
 
 ##### 2. Model Architecture
 
-1. I start by using the LeNet architecture as described in the _Lesson# 8: Convolutional Neural Network_. This model could not give the minimum accuracy level of .93 for the validation dataset. However, instead of changing the model I focused on using other data-preprocesing techniques (especially data augmentation) as recommended in the project description. I am able to get 97% accuracy on the validation set with the simplest LeNet model. I am quite certain that I can improve this metrics by evolving this model which will be my next step. For now however, I report my approach and results with basic LeNet model.
+1. I start by using the LeNet architecture . This model could not give the minimum accuracy level of .93 for the validation dataset. However, instead of changing the model I focused on using other data-preprocesing techniques (especially data augmentation) as recommended in the project description. I am able to get 97% accuracy on the validation set with the simplest LeNet model. I am quite certain that I can improve this metrics by evolving this model which will be my next step. For now however, I report my approach and results with basic LeNet model.
 
 2. The model consists of the following layers:
 
